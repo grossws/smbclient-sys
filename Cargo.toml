@@ -1,0 +1,17 @@
+[package]
+name = "smbclient-sys"
+version = "0.1.0"
+authors = ["Konstantin Gribov <grossws@gmail.com>"]
+build = "build.rs"
+links = "smbclient"
+
+repository = "https://github.com/grossws/smbclient-sys"
+license = "GPL-3.0+"
+keywords = ["smbclient", "samba", "cifs"]
+
+[dependencies]
+libc = "^0.2.18"
+
+[build-dependencies]
+pkg-config = "^0.3.8"
+libbindgen = "^0.1.3"
