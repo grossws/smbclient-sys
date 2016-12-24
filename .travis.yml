@@ -1,0 +1,22 @@
+dist: trusty
+sudo: false
+
+language: rust
+cache: cargo
+rust:
+- stable
+- beta
+- nightly
+matrix:
+  allow_failures:
+  - rust: nightly
+
+env:
+  - PKG_CONFIG_PATH="/usr/lib/*/pkgconfig/"
+
+addons:
+  apt:
+    packages:
+    - libsmbclient-dev
+    - pkg-config
+
