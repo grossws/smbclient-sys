@@ -1,5 +1,7 @@
 # smbclient-sys -- `libsmbclient` bindings
- 
+
+[![Build Status](https://travis-ci.org/smbc-rs/smbclient-sys.svg?branch=master)](https://travis-ci.org/smbc-rs/smbclient-sys)
+
 ## About
 
 `smbclient-sys` is bindings for `libsmbclient` from [Samba][samba] project.
