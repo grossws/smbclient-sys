@@ -16,6 +16,10 @@ env:
 
 addons:
   apt:
+    sources:
+    - sourceline: 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main'
+      key_url: 'http://apt.llvm.org/llvm-snapshot.gpg.key'
+
     packages:
     - libsmbclient-dev
     - pkg-config
