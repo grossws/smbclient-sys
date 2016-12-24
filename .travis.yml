@@ -23,4 +23,6 @@ addons:
     packages:
     - libsmbclient-dev
     - pkg-config
+    - clang-3.9
+    - libclang-3.9-dev
 
