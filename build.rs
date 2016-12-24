@@ -24,7 +24,6 @@ use std::path::PathBuf;
 
 fn main() {
     let lib = pkg_config::Config::new()
-        .atleast_version("4.0.0")
         .probe("smbclient")
         .expect("libsmbclient v4.0.0+ not found");
 
