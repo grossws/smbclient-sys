@@ -8,6 +8,7 @@ links = "smbclient"
 repository = "https://github.com/smbc-rs/smbclient-sys"
 license = "GPL-3.0+"
 keywords = ["smbclient", "samba", "cifs"]
+description = "FFI bindings to libsmbclient"
 
 [dependencies]
 libc = "^0.2.18"
