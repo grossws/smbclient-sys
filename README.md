@@ -3,6 +3,7 @@
 [![Crates.io](https://img.shields.io/crates/v/smbclient-sys.svg)](https://crates.io/crates/smbclient-sys)
 [![Build Status](https://travis-ci.org/smbc-rs/smbclient-sys.svg?branch=master)](https://travis-ci.org/smbc-rs/smbclient-sys)
 [![Crates.io](https://img.shields.io/crates/l/smbclient-sys.svg)](https://crates.io/crates/smbclient-sys)
+[![Gitter](https://img.shields.io/gitter/room/smbc-rs/general.svg)](https://gitter.im/smbc-rs/general)
 
 ## About
 
