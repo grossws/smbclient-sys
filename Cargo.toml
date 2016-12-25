@@ -1,6 +1,6 @@
 [package]
 name = "smbclient-sys"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Konstantin Gribov <grossws@gmail.com>", "Mahmut Bulut <vertexclique@gmail.com>"]
 build = "build.rs"
 links = "smbclient"
