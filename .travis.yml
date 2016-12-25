@@ -29,3 +29,10 @@ addons:
     - libclang-3.9-dev
     - llvm-3.9-dev
 
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/56fd70433fab232224f2
+    on_success: change
+    on_failure: always
+    on_start: never
