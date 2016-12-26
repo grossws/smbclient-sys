@@ -11,9 +11,9 @@
 
 Bindings are generated from `libsmbclient.h` header file which should be:
 
-* discoverable by `pkg-config` tool;
+* discoverable by [`pkg-config`][pkg-config] tool;
 * or by setting both `SMBCLIENT_INCLUDE_PATH` and `SMBCLIENT_LIBRARY_PATH`
-  (takes precedence over `pkg-config`).
+  (takes precedence over [`pkg-config`][pkg-config]).
 
 
 ## License
@@ -23,4 +23,5 @@ It can be found at [COPYING](COPYING) or at [GNU][gpl] site.
 
 
 [gpl]: https://www.gnu.org/licenses/gpl.txt
+[pkg-config]: https://crates.io/crates/pkg-config
 [samba]: https://www.samba.org
