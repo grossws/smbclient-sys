@@ -11,7 +11,9 @@
 
 Bindings are generated from `libsmbclient.h` header file which should be:
 
-* discoverable by `pkg-config` tool (additional ways coming soon)
+* discoverable by `pkg-config` tool;
+* or by setting both `SMBCLIENT_INCLUDE_PATH` and `SMBCLIENT_LIBRARY_PATH`
+  (takes precedence over `pkg-config`).
 
 
 ## License

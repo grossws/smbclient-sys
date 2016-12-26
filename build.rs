@@ -23,11 +23,25 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    let lib = pkg_config::Config::new()
-        .probe("smbclient")
-        .expect("libsmbclient v4.0.0+ not found");
-
-    let header = find_header(&lib).unwrap().to_str().unwrap().to_string();
+    let inc_path_name = "SMBCLIENT_INCLUDE_PATH";
+    let lib_path_name = "SMBCLIENT_LIBRARY_PATH";
+    let header = match (env::var(inc_path_name), env::var(lib_path_name)) {
+        (Ok(inc_path), Ok(lib_path)) => {
+            println!("cargo:rustc-link-lib=smbclient");
+            println!("cargo:rustc-link-search=native={}", lib_path);
+            let mut path = PathBuf::from(inc_path);
+            path.push("libsmbclient.h");
+            path.to_str().unwrap().to_string()
+        }
+        (Ok(_), Err(_)) | (Err(_), Ok(_)) =>
+            panic!("Either both {} and {} should be set or none of them", inc_path_name, lib_path_name),
+        (Err(_), Err(_)) => {
+            let lib = pkg_config::Config::new()
+                .probe("smbclient")
+                .expect("libsmbclient not found");
+            find_header(&lib).unwrap().to_str().unwrap().to_string()
+        }
+    };
 
     let bindings = libbindgen::Builder::default()
         .no_unstable_rust()
