@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with smbclient-sys.  If not, see <http://www.gnu.org/licenses/>.
 
-extern crate libbindgen;
+extern crate bindgen;
 extern crate pkg_config;
 
 use std::env;
@@ -43,14 +43,13 @@ fn main() {
         }
     };
 
-    let bindings = libbindgen::Builder::default()
-        .no_unstable_rust()
+    let bindings = bindgen::Builder::default()
+        .rust_target(bindgen::RustTarget::Stable_1_25)
         .header(header)
         .ctypes_prefix("::libc")
-        .link("smbclient")
-        .whitelisted_type("(smbc_.*)|(SMBC.*)")
-        .whitelisted_function("smbc_.*")
-        .whitelisted_var("SMBC?.*")
+        .whitelist_type("(smbc_.*)|(SMBC.*)")
+        .whitelist_function("smbc_.*")
+        .whitelist_var("SMBC?.*")
         .generate()
         .expect("failed to generate bindings for libsmbclient");
 
